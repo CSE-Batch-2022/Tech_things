@@ -1,0 +1,59 @@
+1) predict the output for the following #include <stdio.h>
+
+int main()
+{
+   int arri[] = {1, 2 ,3};
+   int *ptri = arri;
+
+   char arrc[] = {1, 2 ,3};
+   char *ptrc = arrc;
+
+   printf("sizeof arri[] = %d ", sizeof(arri));
+   printf("sizeof ptri = %d ", sizeof(ptri));
+
+   printf("sizeof arrc[] = %d ", sizeof(arrc));
+   printf("sizeof ptrc = %d ", sizeof(ptrc));
+
+   return 0;
+}
+
+O/p :-
+
+12(no of elements * size of int)
+8(64 bit compiler) or 4(32 bit complier)
+3(no of elements *size of char)
+8 (64 bit complier) or 4(32 bit complier)
+
+2) predict the output  #include<stdio.h>
+int main()
+{
+   int arr[] = {10,15,20,30,35,40};
+int *ptr1 = arr;
+int *ptr2 = arr+5;
+printf("Number of elements between two pointer are: %d.",
+       (ptr2 - ptr1));
+printf("Number of bytes between two pointers are: %d",
+      (char*)ptr2 - (char*) ptr1);
+printf("%d",&*&*ptr1);
+return 0;
+}
+
+Tip:-
+Nama ipo *& consecutive a use pana oru oru star um oru oru and a cancel panum then remaining iruykradhukuy irukra madhri print aagum
+
+
+3) predict the output  #include<stdio.h>
+int main()
+{
+int a = 10;
+int *ptr = &a;
+printf("%d",&**&ptr1);
+printf("%d",*&&*ptr1);
+return 0;
+}
+
+Concept behind these programs :-
+
+S idhula soli irukra madhri dhan normal a oru array itself a pointer apdi irukrapa first pointer la adhavadhu ptr1 = arr adhu edhuku equal a irukumna arr oda initial address ( consider it as 1000) then ptr2 = arr + 5( indha edathula pointer address epdi calculate aagumna 1000 + 5*(size of int) = 1000 + 5(4) = 1020 ) so ptr1 la 1000 nu irukum ptr2 la 1020 nu irukum then  normal a oru pointer Subtraction la rendu value um subtract aagi then andha pointers oda datatype oda size aala divide aagum indha case 1020-1000÷4 = 5 second la char * la type cast pani irukom so adhunala ÷ by 1 aagirum so adhunala 20 varudhu idhula 1000 ngura address understanding kaga dhan kuduthu irukan computer la vera address irukuym but result same aa dhan iruku
+
+Okay idhuku na conclude panidren first one ku a address print aagum second ku error varum (expected identifier before '*' token) 
